@@ -1,0 +1,1 @@
+json.partial! "uncategories/uncategory", uncategory: @uncategory

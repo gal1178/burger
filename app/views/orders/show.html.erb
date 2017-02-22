@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @order.operator %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @order.restaurant %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @order.created_at %>
+</p>
+
+<%- for i in 0...@order.dishes.size%>
+<p>
+  <strong>Dishes:</strong>
+  <%= @order.dishes[i].name %>
+</p>
+<p>
+  <strong>Cost:</strong>
+  <%= @order.dishes[i].cost %>
+</p>
+<%-end%>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

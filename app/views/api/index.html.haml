@@ -1,0 +1,25 @@
+- if user_signed_in?
+  %span
+    Здравствуйте, #{current_user.email}
+  = link_to 'Выйти', destroy_user_session_path, :method => :delete
+  %div
+    =link_to "создать новый заказ", new_order_path
+    %br
+    Вот актуальное меню:
+    %br
+    -if @menu!=nil
+      ="Название => "+@menu.name
+      %br
+      Categories:
+      %br
+      -@menu.categories.each do |c|
+        =c.name
+        %br
+        Dishes in #{c.name}:
+        -c.dishes.each do |d|
+          =d.name
+          ="," if d.id!=c.dishes.last.id
+        %br
+- else
+  = link_to 'Войти', new_user_session_path
+  или #{link_to 'Зарегистрироваться', new_user_registration_path}

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Dish:
+  = @position.dish_id
+%p
+  %b Quantity:
+  = @position.quantity
+%p
+  %b Order:
+  = @position.order_id
+
+= link_to 'Edit', edit_position_path(@position)
+\|
+= link_to 'Back', positions_path

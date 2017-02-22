@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @uncategory.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @uncategory.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_uncategory_path(@uncategory) %> |
+<%= link_to 'Back', uncategories_path %>

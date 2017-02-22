@@ -1,0 +1,20 @@
+-table=Order.first.statistic
+%table
+  %th
+    Название
+  %th
+    Категория
+  %th
+    Количество проданных единиц товара
+  %th
+    Выручка по товару
+  -table.each do |t|
+    %tr
+      %td
+        =t["dish name"]
+      %td
+        =t["category name"]
+      %td
+        =t["quantity"]
+      %td
+        =t["earnings"]

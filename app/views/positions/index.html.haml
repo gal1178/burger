@@ -1,0 +1,25 @@
+%h1 Listing positions
+
+%table
+  %thead
+    %tr
+      %th Dish
+      %th Quantity
+      %th Order
+      %th
+      %th
+      %th
+
+  %tbody
+    - @positions.each do |position|
+      %tr
+        %td= position.dish_id
+        %td= position.quantity
+        %td= position.order_id
+        %td= link_to 'Show', position
+        %td= link_to 'Edit', edit_position_path(position)
+        %td= link_to 'Destroy', position, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Position', new_position_path

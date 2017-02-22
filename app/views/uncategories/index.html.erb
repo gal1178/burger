@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Uncategories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uncategories.each do |uncategory| %>
+      <tr>
+        <td><%= uncategory.name %></td>
+        <td><%= uncategory.category_id %></td>
+        <td><%= link_to 'Show', uncategory %></td>
+        <td><%= link_to 'Edit', edit_uncategory_path(uncategory) %></td>
+        <td><%= link_to 'Destroy', uncategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uncategory', new_uncategory_path %>

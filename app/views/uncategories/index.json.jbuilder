@@ -1,0 +1,1 @@
+json.array! @uncategories, partial: 'uncategories/uncategory', as: :uncategory
